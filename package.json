@@ -1,0 +1,119 @@
+{
+  "name": "@asuranetwork/baileys",
+  "version": "1.0.1",
+  "description": "Asura Net: modifikasi Baileys berbasis WhiskeySockets/Baileys 7.0.0-rc14 dengan CommonJS, ESM, button, interactive message, dan WAProto.",
+  "keywords": [
+    "whatsapp",
+    "baileys",
+    "whatsapp-web",
+    "bot",
+    "native-flow",
+    "a2ui",
+    "bloks-widget",
+    "protobuf",
+    "esm",
+    "commonjs"
+  ],
+  "license": "MIT",
+  "author": "asuranet",
+  "main": "./lib/cjs/index.js",
+  "types": "./lib/cjs/index.d.ts",
+  "files": [
+    "lib/",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
+  "dependencies": {
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@cacheable/node-cache": "^1.4.0",
+    "@hapi/boom": "^10.0.1",
+    "@hapi/hoek": "^11.0.7",
+    "async-mutex": "^0.5.0",
+    "libsignal": "npm:@levvsync/libsignal",
+    "link-preview-js": "^3.0.0",
+    "long": "^5.3.2",
+    "lru-cache": "^11.1.0",
+    "music-metadata": "^11.12.3",
+    "p-queue": "^9.0.0",
+    "pino": "^9.6.0",
+    "protobufjs": "^7.5.6",
+    "whatsapp-rust-bridge": "0.5.5",
+    "ws": "^8.18.0"
+  },
+  "peerDependencies": {
+    "audio-decode": "^2.1.3",
+    "jimp": "^1.6.1",
+    "sharp": "*"
+  },
+  "peerDependenciesMeta": {
+    "audio-decode": {
+      "optional": true
+    },
+    "jimp": {
+      "optional": true
+    },
+    "sharp": {
+      "optional": true
+    }
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "module": "./lib/esm/index.js",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./lib/esm/index.d.ts",
+        "default": "./lib/esm/index.js"
+      },
+      "require": {
+        "types": "./lib/cjs/index.d.ts",
+        "default": "./lib/cjs/index.js"
+      },
+      "types": "./lib/cjs/index.d.ts",
+      "default": "./lib/cjs/index.js"
+    },
+    "./WAProto": {
+      "import": {
+        "types": "./lib/WAProto/index.d.mts",
+        "default": "./lib/WAProto/index.mjs"
+      },
+      "require": {
+        "types": "./lib/WAProto/index.d.cts",
+        "default": "./lib/WAProto/index.cjs"
+      },
+      "types": "./lib/WAProto/index.d.ts",
+      "default": "./lib/WAProto/index.cjs"
+    },
+    "./WAProto/*": "./lib/WAProto/*",
+    "./package.json": "./package.json",
+    "./WAProto/index.js": {
+      "import": {
+        "types": "./lib/WAProto/index.d.mts",
+        "default": "./lib/WAProto/index.mjs"
+      },
+      "require": {
+        "types": "./lib/WAProto/index.d.cts",
+        "default": "./lib/WAProto/index.js"
+      },
+      "types": "./lib/WAProto/index.d.ts",
+      "default": "./lib/WAProto/index.js"
+    }
+  },
+  "overrides": {
+    "whatsapp-rust-bridge": "0.5.5"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "contributors": [
+    "LevviSync",
+    "WhiskeySockets/Baileys contributors"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asuranetwork/baileys.git"
+  },
+  "homepage": "https://github.com/asuranetwork/baileys#readme"
+}
